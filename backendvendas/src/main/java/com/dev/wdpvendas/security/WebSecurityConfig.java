@@ -45,11 +45,8 @@ public AuthenticationManager authenticationManager(AuthenticationConfiguration a
 @Bean
 public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
     http
-            .cors(cors -> cors.disable())
-            .csrf(csrf -> csrf.disable())
-            .exceptionHandling(handling -> handling.authenticationEntryPoint(unauthorizedHandler))
-            .sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.STATELESS)).
-            authorizeHttpRequests(requests -> requests
+            .csrf(csrf -> csrf.disable())            
+            .authorizeHttpRequests(requests -> requests
             .requestMatchers("/api/pessoa-gerenciamento/**").permitAll()
 
             //.antMatchers(HttpMethod.GET,"/api/pedido/**").hasAuthority("ROLE_ADMIN")
@@ -79,7 +76,9 @@ public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
 
             .requestMatchers(WHITE_LIST_URL).permitAll()
 
-            .anyRequest().authenticated());
+            .anyRequest().authenticated())
+            //.exceptionHandling(handling -> handling.authenticationEntryPoint(unauthorizedHandler))
+            .sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
         http.addFilterBefore(authFilterToken(), UsernamePasswordAuthenticationFilter.class);
 

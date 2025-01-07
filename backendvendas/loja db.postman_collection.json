@@ -1,0 +1,3798 @@
+{
+	"info": {
+		"_postman_id": "3d1f2d3d-1341-421a-bc1a-1249d5df9f1e",
+		"name": "loja db",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24144890"
+	},
+	"item": [
+		{
+			"name": "CategoriaController",
+			"item": [
+				{
+					"name": "cria uma categoria de produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFemVxdWllbC5IYXllc0BnbWFpbC5jb20iLCJpYXQiOjE3MzYxODQ0MzUsImV4cCI6MTczNjE4NTMzNX0.H5jHMBNuG7qh6kBU1iilZuJ_sZWDwxpVt74DDcygn_q7ORG4ID344ERB_1DdfTEQSGxDIe64f2UehmJWlPwqOQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Suplementos\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/categoria/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categoria",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar uma categoria de produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJJemFiZWxsYS5Sb3dlQGdtYWlsLmNvbSIsImlhdCI6MTczNTkyMjM4NSwiZXhwIjoxNzM1OTIzMjg1fQ.DTQzZInt979h7f4rQ4fvdZLVvDq4t16FnXj6l1__4XKiUi8sKU5sVITwqoEJSdZ5ywGDJ7rQTJ1ZezDvkSoc1w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":20,\r\n  \"nome\": \"calçados\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/categoria/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categoria",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar uma categoria de produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJJemFiZWxsYS5Sb3dlQGdtYWlsLmNvbSIsImlhdCI6MTczNTkyMjgxMCwiZXhwIjoxNzM1OTIzNzEwfQ.vaYcDOUZYhSpGOUCOfdAexs3tNWg7CQHAgCV-veRqzFDLvv6ohKI9_uPbDKONjgVsFUS1x2EkkEJPtGNHtaiwQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/categoria/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categoria",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar todas as categorias de produto",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/categoria/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categoria",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar categoria por ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/categoria/34",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categoria",
+								"34"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MarcaController",
+			"item": [
+				{
+					"name": "Deletar uma marca",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJJemFiZWxsYS5Sb3dlQGdtYWlsLmNvbSIsImlhdCI6MTczNTk5ODE2OCwiZXhwIjoxNzM1OTk5MDY4fQ.Vx-IFn0fR68jRjIf0Dt7GN3gJJEdHt1Fa9-oyRQoCqOtbl4L1KjpXlKJmx2bp_N4bEcVGlI1QdzlxC7O1HDQhw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/marca/35",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"marca",
+								"35"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cadastrar marca",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									" pm.environment.set(\"nome\", pm.variables.replaceIn(\r",
+									"    '{{$randomCompanyName}}'\r",
+									"));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFemVxdWllbC5IYXllc0BnbWFpbC5jb20iLCJpYXQiOjE3MzYxODUzNzMsImV4cCI6MTczNjE4NjI3M30.5dPwXdky0sElJcCEezcnk_C8bWmXZHDgOGy8ObD8gkLD1He0pP_HSsk0-7w1YqxKxrux7tj0__YH_DEl3KuTdQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n\"nome\": \"{{nome}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/marca/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"marca",
+								""
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar marca",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJJemFiZWxsYS5Sb3dlQGdtYWlsLmNvbSIsImlhdCI6MTczNTk5ODE2OCwiZXhwIjoxNzM1OTk5MDY4fQ.Vx-IFn0fR68jRjIf0Dt7GN3gJJEdHt1Fa9-oyRQoCqOtbl4L1KjpXlKJmx2bp_N4bEcVGlI1QdzlxC7O1HDQhw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":37,\n    \"nome\": \"Thommy\"\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/marca/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"marca",
+								""
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "buscar todas as marcas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/marca/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"marca",
+								""
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "buscar marca por ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/marca/36",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"marca",
+								"36"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PermissaoController",
+			"item": [
+				{
+					"name": "cria uma categoria de permissao",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJRdWVlbmllX1R1cmNvdHRlQGdtYWlsLmNvbSIsImlhdCI6MTczNTQwNjY0MCwiZXhwIjoxNzM1NDA3NTQwfQ.aCupxDWbaANRrjTJGktvTdQ_sCqI_EkXxQFIJKLiCWLLTnSxIaYSZ78tP3Aeal-SBW3Ihayp8wqlrnYeC0ZTow",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"stec\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/permissao/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"permissao",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cria uma categoria de permissao Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncmVnb3Jpby5kZXMyMkBnbWFpbC5jb20iLCJpYXQiOjE3MzQ2MzQxNTUsImV4cCI6MTczNDYzNTA1NX0.gtCGgEHJx-W5NyWr2zI4PkVxfwdd4Vy7vHvsuq6lGObFWua1Ghw5Cc8Cli_9CLqu9IxVgU93s5wCuh7WP34c5w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":298,\r\n  \"nome\": \"TECNICO\",\r\n  \"dataCriacao\": \"2024-12-06T22:46:03.450Z\",\r\n  \"dataAtualizacao\": \"2024-12-06T22:46:03.450Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/permissao/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"permissao",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar todas as categorias de permissao",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncmVnb3Jpby5kZXMyMkBnbWFpbC5jb20iLCJpYXQiOjE3MzQ2MzQxNTUsImV4cCI6MTczNDYzNTA1NX0.gtCGgEHJx-W5NyWr2zI4PkVxfwdd4Vy7vHvsuq6lGObFWua1Ghw5Cc8Cli_9CLqu9IxVgU93s5wCuh7WP34c5w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/permissao/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"permissao",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar uma permissao",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncmVnb3Jpby5kZXMyMkBnbWFpbC5jb20iLCJpYXQiOjE3MzQ2MzQ1NzAsImV4cCI6MTczNDYzNTQ3MH0.YxMG7lHgPhecMfqfkXr55a9G3UDO_sf_Eeud_vf_P1NfvToqp01qGat83wf6C0vbEoEdBMtckMNWuAig4g3rNg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/permissao/298",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"permissao",
+								"298"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PessoaClienteController",
+			"item": [
+				{
+					"name": "cadastrar cliente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"nome\", pm.variables.replaceIn(\r",
+									"    '{{$randomFullName}}'\r",
+									"));\r",
+									"pm.environment.set(\"data_nasc\", pm.variables.replaceIn(\r",
+									"    '{{$randomDatePast}}'\r",
+									"));\r",
+									"pm.environment.set(\"genero\", pm.variables.replaceIn(\r",
+									"    '{{$randomNamePrefix}}'\r",
+									"));\r",
+									"pm.environment.set(\"email\", pm.variables.replaceIn(\r",
+									"    '{{$randomEmail}}'\r",
+									"));\r",
+									"pm.environment.set(\"celular\", pm.variables.replaceIn(\r",
+									"    '{{$randomPhoneNumber}}'\r",
+									"));\r",
+									"pm.environment.set(\"tel_fixo\", pm.variables.replaceIn(\r",
+									"    '{{$randomPhoneNumber}}'\r",
+									"));\r",
+									"\r",
+									"pm.environment.set(\"cpf\", pm.variables.replaceIn(\r",
+									"    '{{$randomBankAccount}}'\r",
+									"));\r",
+									"pm.environment.set(\"avatar\", pm.variables.replaceIn(\r",
+									"    '{{$randomAvatarImage}}'\r",
+									"));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"{{nome}}\",\n    \"data_nasc\": \"28/11/1990\",\n    \"genero\": \"{{genero}}\",\n    \"email\": \"{{email}}\",\n    \"celular\":\"{{celular}}\",\n    \"tel_fixo\": \"{{tel_fixo}}\",\n    \"cpf\": \"{{cpf}}\",\n    \"senha\": \"1234\",\n    \"avatar\":\"{{avatar}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/cliente/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cliente",
+								""
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar cliente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEZXNzaWUzNEBnbWFpbC5jb20iLCJpYXQiOjE3MzU5OTg5OTAsImV4cCI6MTczNTk5OTg5MH0.0b-FCLGQDbklZOpixDOVpCzLeOClQ1xz9qSl8kLRFMgoRFUMUb6m6pLvdmNCcTpTso9xR1GYYlLZjfW3GcGieQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":39,\n    \"nome\": \"Kathy\",\n    \"cpf\": \"08910376406\",\n    \"email\": \"Felton.Wiegand62@yahoo.com\",\n    \"senha\": \"$2a$10$TPmqK502sdVrXCqIABApGe3zrOoxoKaTfpIQ5VvRv9fQTqO0c2.fK\",\n    \"genero\": \"Mrs.\",\n    \"avatar\": \"https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/278.jpg\",\n    \"data_nasc\": \"Thu Feb 22 2024 04:59:38 GMT-0300 (Horário Padrão de Brasília)\",\n    \"celular\": \"778-793-6002\",\n    \"tel_fixo\": \"789-627-9291\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/cliente/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cliente",
+								""
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "buscar cliente por id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEZXNzaWUzNEBnbWFpbC5jb20iLCJpYXQiOjE3MzU5OTgwNjAsImV4cCI6MTczNTk5ODk2MH0.lr6wSUDP55bAAeZSZJmeHKtxnO1oh-ckHg0CI-4__NRYnyhopW5lPhfGIF9SAmCWzAic4a0C32HXY8fyZBR9tw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/cliente/38",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cliente",
+								"38"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PessoaController",
+			"item": [
+				{
+					"name": "cadastrarpessoa",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"nome\", pm.variables.replaceIn(\r",
+									"    '{{$randomFullName}}'\r",
+									"));\r",
+									"pm.environment.set(\"data_nasc\", pm.variables.replaceIn(\r",
+									"    '{{$randomDatePast}}'\r",
+									"));\r",
+									"pm.environment.set(\"genero\", pm.variables.replaceIn(\r",
+									"    '{{$randomNamePrefix}}'\r",
+									"));\r",
+									"pm.environment.set(\"email\", pm.variables.replaceIn(\r",
+									"    '{{$randomEmail}}'\r",
+									"));\r",
+									"pm.environment.set(\"celular\", pm.variables.replaceIn(\r",
+									"    '{{$randomPhoneNumber}}'\r",
+									"));\r",
+									"pm.environment.set(\"tel_fixo\", pm.variables.replaceIn(\r",
+									"    '{{$randomPhoneNumber}}'\r",
+									"));\r",
+									"\r",
+									"pm.environment.set(\"cpf\", pm.variables.replaceIn(\r",
+									"    '{{$randomBankAccount}}'\r",
+									"));\r",
+									"pm.environment.set(\"avatar\", pm.variables.replaceIn(\r",
+									"    '{{$randomAvatarImage}}'\r",
+									"));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJJemFiZWxsYS5Sb3dlQGdtYWlsLmNvbSIsImlhdCI6MTczNjAwMjA5NiwiZXhwIjoxNzM2MDAyOTk2fQ.wQEBjFMH7zv9zPF3f4kMxQNz1Xr2KDiYSJu5HLtLKR6GmhcwBpbaOKj-AZ6Q5C_adULZH0DfDOcjkgDqNyFIRA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"{{nome}}\",\n    \"data_nasc\": \"28/11/1990\",\n    \"genero\": \"{{genero}}\",\n    \"email\": \"{{email}}\",\n    \"celular\":\"{{celular}}\",\n    \"tel_fixo\": \"{{tel_fixo}}\",\n    \"cpf\": \"{{cpf}}\",\n    \"senha\": \"1234\",\n    \"avatar\":\"{{avatar}}\",\n    \"role\":\"ADMIN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/pessoa/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pessoa",
+								""
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar pessoa",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"nome\", pm.variables.replaceIn(\r",
+									"    '{{$randomFullName}}'\r",
+									"));\r",
+									"pm.environment.set(\"data_nasc\", pm.variables.replaceIn(\r",
+									"    '{{$randomDatePast}}'\r",
+									"));\r",
+									"pm.environment.set(\"genero\", pm.variables.replaceIn(\r",
+									"    '{{$randomNamePrefix}}'\r",
+									"));\r",
+									"pm.environment.set(\"email\", pm.variables.replaceIn(\r",
+									"    '{{$randomEmail}}'\r",
+									"));\r",
+									"pm.environment.set(\"celular\", pm.variables.replaceIn(\r",
+									"    '{{$randomPhoneNumber}}'\r",
+									"));\r",
+									"pm.environment.set(\"tel_fixo\", pm.variables.replaceIn(\r",
+									"    '{{$randomPhoneNumber}}'\r",
+									"));\r",
+									"\r",
+									"pm.environment.set(\"cpf\", pm.variables.replaceIn(\r",
+									"    '{{$randomBankAccount}}'\r",
+									"));\r",
+									"pm.environment.set(\"avatar\", pm.variables.replaceIn(\r",
+									"    '{{$randomAvatarImage}}'\r",
+									"));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJJemFiZWxsYS5Sb3dlQGdtYWlsLmNvbSIsImlhdCI6MTczNjAwMjg1NCwiZXhwIjoxNzM2MDAzNzU0fQ._TgrcrQs9wGPClTyMm2CC6LZoVJoZUocbp2rorIokbYR0yNG_pmeLiUZclEaGrwnPGVKNPCqYXUtenpSwimATQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":1,\n    \"nome\": \"{{nome}}\",\n    \"data_nasc\": \"28/11/1990\",\n    \"genero\": \"{{genero}}\",\n    \"email\": \"{{email}}\",\n    \"celular\":\"{{celular}}\",\n    \"tel_fixo\": \"{{tel_fixo}}\",\n    \"cpf\": \"{{cpf}}\",\n    \"senha\": \"1234\",\n    \"avatar\":\"{{avatar}}\",\n    \"role\":\"ADMIN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/pessoa/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pessoa",
+								""
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "buscar todas pessoas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJJemFiZWxsYS5Sb3dlQGdtYWlsLmNvbSIsImlhdCI6MTczNjAwMjA5NiwiZXhwIjoxNzM2MDAyOTk2fQ.wQEBjFMH7zv9zPF3f4kMxQNz1Xr2KDiYSJu5HLtLKR6GmhcwBpbaOKj-AZ6Q5C_adULZH0DfDOcjkgDqNyFIRA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/pessoa/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pessoa",
+								""
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar uma pessoa",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncmVnb3Jpby5kZXMyMkBnbWFpbC5jb20iLCJpYXQiOjE3MzYwMTYwMDcsImV4cCI6MTczNjAxNjkwN30.ZeGGkZLy8BoLdGUoBNu3U4hL23an_FpF0Tddkg60HttCsnlgVkakFWKJRVkZUa0CVDRB2VIeU_4Fk-ZpYFMBLA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/pessoa/181",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pessoa",
+								"181"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar pessoa  por id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJJemFiZWxsYS5Sb3dlQGdtYWlsLmNvbSIsImlhdCI6MTczNjAwMjQ4MiwiZXhwIjoxNzM2MDAzMzgyfQ.dZPwXKVz2HL48ro5DUHNphVSd38mkNtwOFyLFg9eaEJf7NaJ7eSDILsIqdK1wLCINyQ9dA0BTu8Vrl9aPEjlgQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/pessoa/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pessoa",
+								"1"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PessoaGerenciamentoController",
+			"item": [
+				{
+					"name": "login cliente",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"email\": \"Emile37@hotmail.com\",\n    \"senha\": \"1234\"\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/pessoa-gerenciamento/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pessoa-gerenciamento",
+								"login"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "login admin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"email\": \"Ezequiel.Hayes@gmail.com\",\n    \"senha\": \"1234\"\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/pessoa-gerenciamento/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pessoa-gerenciamento",
+								"login"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "recuperar senha",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"gregorio.des22@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/pessoa-gerenciamento/senha-codigo",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pessoa-gerenciamento",
+								"senha-codigo"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "alterar senha",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"gregorio.des22@gmail.com\",\n    \"codigoRecuperacaoSenha\":\"040120251207380757\",\n    \"senha\":\"4321\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/pessoa-gerenciamento/senha-alterar",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pessoa-gerenciamento",
+								"senha-alterar"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProdutoController",
+			"item": [
+				{
+					"name": "Buscar produto pelo id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/produto/94",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"produto",
+								"94"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar todos os produtos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/produto/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"produto",
+								""
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "cadastrar produto",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									" pm.environment.set(\"codigoSKU\", pm.variables.replaceIn(\r",
+									"    '{{$randomBankAccountBic}}'\r",
+									"));\r",
+									"pm.environment.set(\"nome\", pm.variables.replaceIn(\r",
+									"    '{{$randomLastName}}'\r",
+									"));\r",
+									" pm.environment.set(\"marca\", pm.variables.replaceIn(\r",
+									"    '{{$randomCompanyName}}'\r",
+									"));\r",
+									"pm.environment.set(\"quantidadeEstoque\", pm.variables.replaceIn(\r",
+									"    '{{$randomInt}}'\r",
+									")); \r",
+									"pm.environment.set(\"preco\", pm.variables.replaceIn(\r",
+									"    '{{$randomPrice}}'\r",
+									"));\r",
+									"pm.environment.set(\"categoria\", pm.variables.replaceIn(\r",
+									"    '{{$randomDepartment}}'\r",
+									"));\r",
+									"\r",
+									"    "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFemVxdWllbC5IYXllc0BnbWFpbC5jb20iLCJpYXQiOjE3MzYxODQ5MjUsImV4cCI6MTczNjE4NTgyNX0.uNAtHKRD3DbkLrqgnP_Wtl70aPm9QXBeluiEV1TbL_Nphg5FaJTih7CMyOvLugvtZeuiH0Ks8UFfy8cTz_16-g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"codigoSKU\": \"{{codigoSKU}}\",\n    \"nome\": \"{{nome}}\",\n    \"marca\": \"{{marca}}\",\n    \"quantidadeEstoque\":{{quantidadeEstoque}},\n    \"descricao\": \"Descubra o equilíbrio perfeito entre conforto e estilo com o Kit de 10 Calcinhas Plus Size Cós Alto em Microfibra. Feitas para oferecer um ajuste perfeito e um toque suave, essas calcinhas são ideais para mulheres que buscam uma lingerie que combine elegância e bem-estar. O cós alto proporciona uma cobertura segura e confortável, enquanto a microfibra garante um caimento leve e respirável.  Proporciona maior cobertura e suporte, modelando a cintura e oferecendo uma sensação de segurança durante o uso. A microfibra é conhecida pelo seu toque suave, leveza e capacidade de absorção, garantindo conforto e frescor ao longo do dia. Desenvolvidas especialmente para atender todos os tamanhos, essas calcinhas oferecem um ajuste confortável e perfeito para diferentes tipos de corpo.  Composição: 92% Poliéster, 8% Elastano  Tamanhos Disponíveis: M, G, GG, 48, 50, 52, 54, 56, 58, 60 e 62.  MEDIDAS: M: Cintura 70-77 cm, Quadril 95-102 cm G: Cintura 78-85 cm, Quadril 103-110 cm GG: Cintura 86-93 cm, Quadril 111-118 cm 48: Cintura 94-101 cm, Quadril 119-126 cm 50: Cintura 102-109 cm, Quadril 127-134 cm 52: Cintura 110-117 cm, Quadril 135-142 cm 54: Cintura 118-125 cm, Quadril 143-150 cm 56: Cintura 126-133 cm, Quadril 151-158 cm 58: Cintura 134-141 cm, Quadril 159-166 cm 60: Cintura 142-149 cm, Quadril 167-174 cm 62: Cintura 150-157 cm, Quadril 175-182 cm  RECOMENDAÇÕES: - Não lavar com alvejantes - Não usar máquina de secar - Não passar - Não usar máquina de lavar - Somente lavagem manual  Perguntas Frequentes:  O cós alto é confortável para o uso diário? Sim, o cós alto oferece um ajuste seguro e confortável, sem apertar ou causar desconforto.  A microfibra é adequada para climas quentes? Sim, a microfibra é leve e respirável, ideal para manter a sensação de frescor mesmo em dias quentes.  As calcinhas marcam sob roupas justas? Não, o tecido de microfibra e a modelagem foram projetados para um caimento suave, sem marcas visíveis.  Adquira já o seu Kit de 10 Calcinhas Plus Size Cós Alto em Microfibra e experimente o conforto e a elegância que você merece!\",\n    \"preco\": {{preco}},\n    \"precoPromocional\": 78.13,\n    \"categoria\": \"{{categoria}}\",\n    \"subCategorias\": [\n      \"Calcinha Plus Size\",\n      \"Calcinhas\",\n      \"Lingerie\",\n      \"Roupa Intima\"\n    ],\n    \"cores\": [\n     \"Cores variadas\",\n      \"Preto\",\n      \"Bege\",\n      \"5 pretas 5 beges\"\n    ],\n    \"tamanhos\": [\n      \"XG\",\n      \"XGG\",\n      \"G3\",\n      \"G7\",\n      \"G8\",\n      \"M\",\n      \"P\"\n    ],\n    \"detalhesProduto\": [\n      {\n         \"titulo\": \"Material principal\",\n        \"descricao\": \"Microfibra\"\n      },\n      {\n       \"titulo\": \"Linha\",\n        \"descricao\": \"Calcinhas Plus Size\"\n      },\n      {\n        \"titulo\": \"Modelo\",\n        \"descricao\": \"presente calçola tamanho maior senhora cobre bumbum tanga\"\n      },\n      {\n        \"titulo\": \"Gênero\",\n        \"descricao\": \"Feminino\"\n      },\n      {\n        \"titulo\": \"Idade\",\n        \"descricao\": \"Adultos\"\n      },\n      {\n         \"titulo\": \"Idade\",\n        \"descricao\": \"Adultos\"\n      },\n      {\"titulo\": \"Composição\",\n        \"descricao\": \"Poliéster/Elastano\"\n      },\n      {\n         \"titulo\": \"Tipo de calcinha\",\n        \"descricao\": \"Calçola\"\n      },\n      {\n        \"titulo\": \"Tipo de cintura da calcinha\",\n        \"descricao\": \"Cintura alta\"\n      }\n    ],\n    \"imagens\": [\n      {\n        \"url\": \"https://api.codigocapixaba.com.br:5000/uploads/Produtos/4/imagem-05.webp\"\n      },\n      {\n        \"url\": \"https://api.codigocapixaba.com.br:5000/uploads/Produtos/4/imagem-04.webp\"\n      }\n    ]\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/produto/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"produto",
+								""
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "alterar produto",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"codigoSKU\", pm.variables.replaceIn(\r",
+									"    '{{$randomBankAccountBic}}'\r",
+									"));\r",
+									"pm.environment.set(\"nome\", pm.variables.replaceIn(\r",
+									"    '{{$randomLastName}}'\r",
+									"));\r",
+									" pm.environment.set(\"marca\", pm.variables.replaceIn(\r",
+									"    '{{$randomCompanyName}}'\r",
+									"));\r",
+									"pm.environment.set(\"quantidadeEstoque\", pm.variables.replaceIn(\r",
+									"    '{{$randomInt}}'\r",
+									")); \r",
+									"pm.environment.set(\"preco\", pm.variables.replaceIn(\r",
+									"    '{{$randomPrice}}'\r",
+									"));\r",
+									"pm.environment.set(\"categoria\", pm.variables.replaceIn(\r",
+									"    '{{$randomDepartment}}'\r",
+									"));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJJemFiZWxsYS5Sb3dlQGdtYWlsLmNvbSIsImlhdCI6MTczNjAwMzk2NSwiZXhwIjoxNzM2MDA0ODY1fQ.ZHxh3qfkhXFapuV6GOxdOgNkz1cS46S6eDDK-bjSYPXpeGMCw-fKOEfGy7e9X95y7GtqI9H45XEnbm4TtH_JRw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":94,\n    \"codigoSKU\": \"{{codigoSKU}}\",\n    \"nome\": \"{{nome}}\",\n    \"marca\": \"{{marca}}\",\n    \"quantidadeEstoque\":{{quantidadeEstoque}},\n    \"descricao\": \"Descubra o equilíbrio perfeito entre conforto e estilo com o Kit de 10 Calcinhas Plus Size Cós Alto em Microfibra. Feitas para oferecer um ajuste perfeito e um toque suave, essas calcinhas são ideais para mulheres que buscam uma lingerie que combine elegância e bem-estar. O cós alto proporciona uma cobertura segura e confortável, enquanto a microfibra garante um caimento leve e respirável.  Proporciona maior cobertura e suporte, modelando a cintura e oferecendo uma sensação de segurança durante o uso. A microfibra é conhecida pelo seu toque suave, leveza e capacidade de absorção, garantindo conforto e frescor ao longo do dia. Desenvolvidas especialmente para atender todos os tamanhos, essas calcinhas oferecem um ajuste confortável e perfeito para diferentes tipos de corpo.  Composição: 92% Poliéster, 8% Elastano  Tamanhos Disponíveis: M, G, GG, 48, 50, 52, 54, 56, 58, 60 e 62.  MEDIDAS: M: Cintura 70-77 cm, Quadril 95-102 cm G: Cintura 78-85 cm, Quadril 103-110 cm GG: Cintura 86-93 cm, Quadril 111-118 cm 48: Cintura 94-101 cm, Quadril 119-126 cm 50: Cintura 102-109 cm, Quadril 127-134 cm 52: Cintura 110-117 cm, Quadril 135-142 cm 54: Cintura 118-125 cm, Quadril 143-150 cm 56: Cintura 126-133 cm, Quadril 151-158 cm 58: Cintura 134-141 cm, Quadril 159-166 cm 60: Cintura 142-149 cm, Quadril 167-174 cm 62: Cintura 150-157 cm, Quadril 175-182 cm  RECOMENDAÇÕES: - Não lavar com alvejantes - Não usar máquina de secar - Não passar - Não usar máquina de lavar - Somente lavagem manual  Perguntas Frequentes:  O cós alto é confortável para o uso diário? Sim, o cós alto oferece um ajuste seguro e confortável, sem apertar ou causar desconforto.  A microfibra é adequada para climas quentes? Sim, a microfibra é leve e respirável, ideal para manter a sensação de frescor mesmo em dias quentes.  As calcinhas marcam sob roupas justas? Não, o tecido de microfibra e a modelagem foram projetados para um caimento suave, sem marcas visíveis.  Adquira já o seu Kit de 10 Calcinhas Plus Size Cós Alto em Microfibra e experimente o conforto e a elegância que você merece!\",\n    \"preco\": {{preco}},\n    \"precoPromocional\": 78.13,\n    \"categoria\": \"{{categoria}}\",\n    \"subCategorias\": [\n      \"Calcinha Plus Size\",\n      \"Calcinhas\",\n      \"Lingerie\",\n      \"Roupa Intima\"\n    ],\n    \"cores\": [\n     \"Cores variadas\",\n      \"Preto\",\n      \"Bege\",\n      \"5 pretas 5 beges\"\n    ],\n    \"tamanhos\": [\n      \"XG\",\n      \"XGG\",\n      \"G3\",\n      \"G7\",\n      \"G8\",\n      \"M\",\n      \"P\"\n    ],\n    \"detalhesProduto\": [\n      {\n         \"titulo\": \"Material principal\",\n        \"descricao\": \"Microfibra\"\n      },\n      {\n       \"titulo\": \"Linha\",\n        \"descricao\": \"Calcinhas Plus Size\"\n      },\n      {\n        \"titulo\": \"Modelo\",\n        \"descricao\": \"presente calçola tamanho maior senhora cobre bumbum tanga\"\n      },\n      {\n        \"titulo\": \"Gênero\",\n        \"descricao\": \"Feminino\"\n      },\n      {\n        \"titulo\": \"Idade\",\n        \"descricao\": \"Adultos\"\n      },\n      {\n         \"titulo\": \"Idade\",\n        \"descricao\": \"Adultos\"\n      },\n      {\"titulo\": \"Composição\",\n        \"descricao\": \"Poliéster/Elastano\"\n      },\n      {\n         \"titulo\": \"Tipo de calcinha\",\n        \"descricao\": \"Calçola\"\n      },\n      {\n        \"titulo\": \"Tipo de cintura da calcinha\",\n        \"descricao\": \"Cintura alta\"\n      }\n    ],\n    \"imagens\": [\n      {\n        \"url\": \"http://api.codigocapixaba.com.br:5000/uploads/Produtos/imagens-1733598769513-416907836.webp\"\n      },\n      {\n        \"url\": \"http://api.codigocapixaba.com.br:5000/uploads/Produtos/imagens-1734277282424-884309785.webp\"\n      }\n    ]\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/produto/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"produto",
+								""
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar um produto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJJemFiZWxsYS5Sb3dlQGdtYWlsLmNvbSIsImlhdCI6MTczNjAwOTIyMiwiZXhwIjoxNzM2MDEwMTIyfQ.QiT1Sl0lgNE_DsbbnbAKDBYDoBPdY2NKK18ov984Sf2vl1iTua459r-mtCrizgJ0WP0CcnlXbIgtJ_RxlHVAWA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/produto/131",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"produto",
+								"131"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Endereco Controller",
+			"item": [
+				{
+					"name": "cadastrar endereco",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"logradouro\", pm.variables.replaceIn(\r",
+									"    '{{$randomStreetName}}'\r",
+									"));\r",
+									"pm.environment.set(\"cidade\", pm.variables.replaceIn(\r",
+									"    '{{$randomCity}}'\r",
+									"));\r",
+									"pm.environment.set(\"numero\", pm.variables.replaceIn(\r",
+									"    '{{$randomInt}}'\r",
+									"));\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFbWlsZTM3QGhvdG1haWwuY29tIiwiaWF0IjoxNzM2MTg0MzA5LCJleHAiOjE3MzYxODUyMDl9.Mo3uObeNrxxShkJFJ6LyCAkmUM39sF2zNQHNCoPxMhUlZPgd6P9WBl7mgH02gNLfmqeE9fxe0o2rZNnPkwwXRw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pessoa\" :{\n        \"id\":5\n    },\n    \"cep\": \"51010-370\",\n    \"logradouro\":\"{{logradouro}}\",\n    \"cidade\":\"{{cidade}}\",\n    \"uf\":\"PE\",\n    \"bairro\":\"Centro\",\n    \"complemento\":\"\",\n    \"numero\":\"{{numero}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/endereco/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"endereco",
+								""
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "alterar endereco",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEZXNzaWUzNEBnbWFpbC5jb20iLCJpYXQiOjE3MzU5OTUwMDYsImV4cCI6MTczNTk5NTkwNn0.gsvfOGzuCgAz_n7es_TJoMvtwo2sSkVzjgyK_1JUQ2eb2G7KxlKPoQYEWsRWfUkXI4dgXmxFrRYnEpXLYHsQeA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\":29,\n    \"pessoa_id\":11, \n    \"cep\": \"51010-370\",\n    \"logradouro\":\"Rua\",\n    \"cidade\":\"Recife\",\n    \"uf\":\"PE\",\n    \"bairro\":\"Centro\",\n    \"complemento\":\"Centro\", \n    \"numero\":\"567\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/endereco/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"endereco",
+								""
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar um endereco",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZHJpZW5uZV9Sb2hhbkBob3RtYWlsLmNvbSIsImlhdCI6MTczNjAxNTc2NywiZXhwIjoxNzM2MDE2NjY3fQ.Jv4T9dLNAGwEz8OA4G8IEyRB1ecs20PsMXoWIjPNY-tu05IO0i-6gWN3HPLrL6RfTkkKgjBDpmlwU0RhhNHIcg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/endereco/184",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"endereco",
+								"184"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar endereco pelo id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEZXNzaWUzNEBnbWFpbC5jb20iLCJpYXQiOjE3MzU5OTY3MjgsImV4cCI6MTczNTk5NzYyOH0.TXnGhBP5NOeCoSp9pzoTBnl7ajnZebQwTt2fJ_GKItlcQYkM0ovVLw7QDlcsZuKGTBHmHxTjwI3jC9qD2BS1mg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/endereco/29",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"endereco",
+								"29"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar todos enderecos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEZXNzaWUzNEBnbWFpbC5jb20iLCJpYXQiOjE3MzU5OTY3MjgsImV4cCI6MTczNTk5NzYyOH0.TXnGhBP5NOeCoSp9pzoTBnl7ajnZebQwTt2fJ_GKItlcQYkM0ovVLw7QDlcsZuKGTBHmHxTjwI3jC9qD2BS1mg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/endereco/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"endereco",
+								""
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedido",
+			"item": [
+				{
+					"name": "cadastrar pedido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFbWlsZTM3QGhvdG1haWwuY29tIiwiaWF0IjoxNzM2MTg1MjkyLCJleHAiOjE3MzYxODYxOTJ9.JwDxsWgmw-lKhEu5lkRj9xmM4tXeh_SmoYNvTWTl82v-iNlSPvemxYJdMHE0L4z2QVJTm1SKRT7xgRJFRxOL5w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"enderecoId\":13,\n    \"pessoaId\":3,\n    \n  \"itensPedido\":[\n    {\"produtoId\":71,\n    \"quantidade\":5,\n    \"preco\":10,\n    \"preco_total\":50\n    },\n    {\"produtoId\":59,\n    \"quantidade\":9,\n    \"preco\":10,\n    \"preco_total\":90}\n  ],\n    \"preco_total\":\"140\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/pedido/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pedido",
+								""
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "buscar todos pedidos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEZXNzaWUzNEBnbWFpbC5jb20iLCJpYXQiOjE3MzYwMDEwODAsImV4cCI6MTczNjAwMTk4MH0.hDi7m_PkGEZy-yKGITHpyOcNpmypncDMYn7j0tTEGdHGKa7y8pGVyjAdnIhD2NRGjwEAyym1FHY0JlF3BXKZig",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/pedido/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pedido",
+								""
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "buscar pedido por id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJJemFiZWxsYS5Sb3dlQGdtYWlsLmNvbSIsImlhdCI6MTczNjAwMDY4NCwiZXhwIjoxNzM2MDAxNTg0fQ.O2-oAiI8wCyXSQRe9YksSrdCJ0AtbuhLbcX5q_BlZgcnwcTISNfq4FL90f7Rgk0dJzOWW1W71udlW4lO6crE_Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/pedido/40",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pedido",
+								"40"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar pedido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEZXNzaWUzNEBnbWFpbC5jb20iLCJpYXQiOjE3MzYwMDEwODAsImV4cCI6MTczNjAwMTk4MH0.hDi7m_PkGEZy-yKGITHpyOcNpmypncDMYn7j0tTEGdHGKa7y8pGVyjAdnIhD2NRGjwEAyym1FHY0JlF3BXKZig",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":40,\r\n    \"enderecoId\":213,\r\n    \"pessoaId\":1,\r\n  \"itensPedido\":[\r\n    {\"produtoId\":999,\r\n    \"quantidade\":30,\r\n    \"preco\":10,\r\n    \"preco_total\":300\r\n    },\r\n    {\"produtoId\":472,\r\n    \"quantidade\":10,\r\n    \"preco\":10,\r\n    \"preco_total\":100}\r\n  ],\r\n    \"preco_total\":\"140\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/pedido/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pedido",
+								""
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Pedido",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEZXNzaWUzNEBnbWFpbC5jb20iLCJpYXQiOjE3MzYwMDE3MjUsImV4cCI6MTczNjAwMjYyNX0.UQOzZQs1NknkP_heKrmH8dirntIZjiNHTbZrq9dLy0cQPqAAeU_mKMplmx6Xbsd9HSKghQgVrd0WdbuIWlWPSw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/pedido/46",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"pedido",
+								"46"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Banner",
+			"item": [
+				{
+					"name": "cadastrar Banner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"categoria\", pm.variables.replaceIn(\r",
+									"    '{{$randomDepartment}}'\r",
+									"));\r",
+									"pm.environment.set(\"imagemDesktopUrl\", pm.variables.replaceIn(\r",
+									"    '{{$randomUrl}}'\r",
+									"));\r",
+									"pm.environment.set(\"imagemMobileUrl\", pm.variables.replaceIn(\r",
+									"    '{{$randomUrl}}'\r",
+									"));\r",
+									"\r",
+									"//console.log(pm.variables.replaceIn('{{$randomFirstName}}'))\r",
+									"//console.log(pm.variables.replaceIn('{{$randomDepartment}}'))\t"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFemVxdWllbC5IYXllc0BnbWFpbC5jb20iLCJpYXQiOjE3MzYxODQ0MzUsImV4cCI6MTczNjE4NTMzNX0.H5jHMBNuG7qh6kBU1iilZuJ_sZWDwxpVt74DDcygn_q7ORG4ID344ERB_1DdfTEQSGxDIe64f2UehmJWlPwqOQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"categoria\": \"perfumaria\",\n    \"imagemDesktop\": \"https://api.codigocapixaba.com.br:5000/uploads/Produtos/7/imagem-01.webp\",\n    \"imagemMobile\": \"{{imagemMobileUrl}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/banner/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"banner",
+								""
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar todos banners",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/banner/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"banner",
+								""
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Banner por Id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/banner/15",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"banner",
+								"15"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Banner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJJemFiZWxsYS5Sb3dlQGdtYWlsLmNvbSIsImlhdCI6MTczNTkwMzQ1NSwiZXhwIjoxNzM1OTA0MzU1fQ.G-9nnwpDK7BIQ6wQwyXUlBxjdQecdJOJ2cKC6ulSn3-iAjklRzicJowAa9IJsyU29HnS2DIajzoJ3_VpyUvFRg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"id\":16,\r\n        \"categoria\": \"moda-intima\",\r\n        \"imagemDesktopUrl\": \"/banners/desktop/banner-moda-intima03.webp\",\r\n        \"imagemMobileUrl\": \"/banners/mobile/banner-moda-intima03.jpg\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/banner/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"banner",
+								""
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Excluir Banner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJJemFiZWxsYS5Sb3dlQGdtYWlsLmNvbSIsImlhdCI6MTczNTkwMzcwMywiZXhwIjoxNzM1OTA0NjAzfQ.JoeDHjpOIlPk_l5Z2Ae6f4VRMT7AEh1WzHsSxD_rm6BEVvBzLVy-KIa8Vckdejcc4sdtxIyvuiQN380DWwXK1w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/banner/18",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"banner",
+								"18"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FavoritosController",
+			"item": [
+				{
+					"name": "adicionar favorito",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									" pm.environment.set(\"codigoSKU\", pm.variables.replaceIn(\r",
+									"    '{{$randomBankAccountBic}}'\r",
+									"));\r",
+									"pm.environment.set(\"nome\", pm.variables.replaceIn(\r",
+									"    '{{$randomLastName}}'\r",
+									"));\r",
+									" pm.environment.set(\"marca\", pm.variables.replaceIn(\r",
+									"    '{{$randomCompanyName}}'\r",
+									"));\r",
+									"pm.environment.set(\"quantidadeEstoque\", pm.variables.replaceIn(\r",
+									"    '{{$randomInt}}'\r",
+									")); \r",
+									"pm.environment.set(\"preco\", pm.variables.replaceIn(\r",
+									"    '{{$randomPrice}}'\r",
+									"));\r",
+									"pm.environment.set(\"categoria\", pm.variables.replaceIn(\r",
+									"    '{{$randomDepartment}}'\r",
+									"));\r",
+									"\r",
+									"    "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJFbWlsZTM3QGhvdG1haWwuY29tIiwiaWF0IjoxNzM2MTg1MjkyLCJleHAiOjE3MzYxODYxOTJ9.JwDxsWgmw-lKhEu5lkRj9xmM4tXeh_SmoYNvTWTl82v-iNlSPvemxYJdMHE0L4z2QVJTm1SKRT7xgRJFRxOL5w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pessoa_id\":2,\n    \"produto_id\": 59\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/favorito/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"favorito",
+								""
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "alterar favoritos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									" pm.environment.set(\"codigoSKU\", pm.variables.replaceIn(\r",
+									"    '{{$randomBankAccountBic}}'\r",
+									"));\r",
+									"pm.environment.set(\"nome\", pm.variables.replaceIn(\r",
+									"    '{{$randomLastName}}'\r",
+									"));\r",
+									" pm.environment.set(\"marca\", pm.variables.replaceIn(\r",
+									"    '{{$randomCompanyName}}'\r",
+									"));\r",
+									"pm.environment.set(\"quantidadeEstoque\", pm.variables.replaceIn(\r",
+									"    '{{$randomInt}}'\r",
+									")); \r",
+									"pm.environment.set(\"preco\", pm.variables.replaceIn(\r",
+									"    '{{$randomPrice}}'\r",
+									"));\r",
+									"pm.environment.set(\"categoria\", pm.variables.replaceIn(\r",
+									"    '{{$randomDepartment}}'\r",
+									"));\r",
+									"\r",
+									"    "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJSb3dhbi5TY2hpbGxlckBob3RtYWlsLmNvbSIsImlhdCI6MTczNjAyNjg4MywiZXhwIjoxNzM2MDI3NzgzfQ.2cxivY4ihLTUBbXOFayh313sTy2CLRxqp6I9JEzFORby5mLOO6hY2OyqAvB0M4kwxPpitdqUUwxtFn3vbedJGA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n    {\n        \"id\": 281,\n        \"pessoa_id\": 180,\n        \"produto_id\": 230,\n        \"createdAt\": \"2025-01-04T21:29:56.000+00:00\",\n        \"updatedAt\": null\n    }\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/favorito/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"favorito",
+								""
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar favoritos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJSb3dhbi5TY2hpbGxlckBob3RtYWlsLmNvbSIsImlhdCI6MTczNjAyNTQ4MSwiZXhwIjoxNzM2MDI2MzgxfQ.q7aJWiWub8GYGx0POTVhnRegViQU02PZTArRrp1pZoRx1vurKmFE84CthvcGQxOULKTFHksZMpTdGUsMVGDhxg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/favorito/180",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"favorito",
+								"180"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Favorito",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"accept": true,
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJSb3dhbi5TY2hpbGxlckBob3RtYWlsLmNvbSIsImlhdCI6MTczNjAyNzAwOSwiZXhwIjoxNzM2MDI3OTA5fQ.fDjNns8IFtP65LWJsM0gByTUC1bK5l903FQoDyW1fDB3dFwTq0syWP7TNYcAkoaaZgv5j_3pgeg7Vdy5mmZsOQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/favorito/251",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"favorito",
+								"251"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8080/swagger-ui/index.html",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/swagger-ui/index.html",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"swagger-ui",
+						"index.html"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		},
+		{
+			"key": "categoria",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "imagemDesktopUrl",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "imagemMobileUrl",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

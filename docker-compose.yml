@@ -13,8 +13,6 @@ services:
       SMTP_PORT: 587
       SMTP_USERNAME: gregorio.des22@gmail.com
       SMTP_PASSWORD: fnxq fvlg ggtm mpzg
-      SMTP_AUTH: true
-      SMTP_ENABLE: true
       
 
     restart: always

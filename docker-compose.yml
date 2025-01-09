@@ -15,7 +15,7 @@ services:
       SMTP_PASSWORD: fnxq fvlg ggtm mpzg
       SMTP_AUTH: true
       SMTP_ENABLE: true
-      JWT_SECRET: my-secret-key
+      
 
     restart: always
     depends_on:

@@ -1,7 +1,6 @@
 services:
   app_vendas:
     build: backendvendas
-    mem_limit: 512m
     ports:
       - "9494:9494"
     environment:
